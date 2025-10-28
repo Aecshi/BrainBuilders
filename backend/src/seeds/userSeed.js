@@ -1,5 +1,5 @@
 // Sample user seed data
-import bcrypt from 'bcryptjs';
+const bcrypt = require('bcryptjs');
 
 const users = [
   {
@@ -42,4 +42,4 @@ const users = [
   },
 ];
 
-export { users };
+module.exports = { users };

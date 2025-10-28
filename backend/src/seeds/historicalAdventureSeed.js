@@ -132,4 +132,4 @@ const historicalAdventures = [
   }
 ];
 
-export { historicalAdventures };
+module.exports = { historicalAdventures };

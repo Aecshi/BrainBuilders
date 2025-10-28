@@ -1,9 +1,4 @@
 // src/seeds/quizSeed.js
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import Quiz from "../models/Quiz.js"; // use .js if you're using ES modules
-
-dotenv.config();
 
 const quizzes = [
   {
@@ -145,27 +140,4 @@ const quizzes = [
 ];
 
 // Export for use in seedProduction.js
-export { quizzes };
-
-// Only run this function if this file is executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  async function seedQuizData() {
-    try {
-      await mongoose.connect(process.env.MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-
-      console.log("✅ Connected to MongoDB");
-      await Quiz.deleteMany();
-      await Quiz.insertMany(quizzes);
-      console.log("🎉 Quiz data seeded successfully!");
-      process.exit();
-    } catch (error) {
-      console.error("❌ Error seeding quiz data:", error);
-      process.exit(1);
-    }
-  }
-
-  seedQuizData();
-}
+module.exports = { quizzes };

@@ -123,4 +123,4 @@ const wordChallenges = [
   }
 ];
 
-export { wordChallenges };
+module.exports = { wordChallenges };

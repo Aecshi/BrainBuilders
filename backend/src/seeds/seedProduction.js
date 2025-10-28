@@ -5,20 +5,18 @@
  * Usage: node src/seeds/seedProduction.js
  */
 
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import User from '../models/User.js';
-import Quiz from '../models/Quiz.js';
-import WordChallenge from '../models/WordChallenge.js';
-import HistoricalAdventure from '../models/HistoricalAdventure.js';
+require('dotenv').config();
+const mongoose = require('mongoose');
+const User = require('../models/User');
+const Quiz = require('../models/Quiz');
+const WordChallenge = require('../models/WordChallenge');
+const HistoricalAdventure = require('../models/HistoricalAdventure');
 
 // Import seed data
-import { users } from './userSeed.js';
-import { quizzes } from './quizSeed.js';
-import { wordChallenges } from './wordChallengeSeed.js';
-import { historicalAdventures } from './historicalAdventureSeed.js';
-
-dotenv.config();
+const { users } = require('./userSeed');
+const { quizzes } = require('./quizSeed');
+const { wordChallenges } = require('./wordChallengeSeed');
+const { historicalAdventures } = require('./historicalAdventureSeed');
 
 // IMPORTANT: Set this to your production MongoDB URI
 const PRODUCTION_MONGO_URI = process.env.MONGODB_URI;
