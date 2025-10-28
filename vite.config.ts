@@ -17,17 +17,11 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     // Production optimizations
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console logs in production
-      },
-    },
+    minify: 'esbuild', // Changed from 'terser' to 'esbuild' (faster and no extra dependency needed)
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          // Removed the problematic ui chunk since it's a directory
         },
       },
     },
