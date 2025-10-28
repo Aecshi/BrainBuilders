@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
-    port: 8082, // Updated to match your frontend port
+    port: 8082,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['@/components/ui'],
+          // Removed the problematic ui chunk since it's a directory
         },
       },
     },
