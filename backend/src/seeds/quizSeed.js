@@ -54,25 +54,118 @@ const quizzes = [
     ],
     isActive: true,
   },
-  // (keep your other quizzes here)
+  {
+    title: "World History: Ancient Civilizations",
+    description: "Explore the fascinating world of ancient civilizations!",
+    subject: "History",
+    gradeLevel: "4",
+    difficulty: "Medium",
+    timeLimit: 15,
+    questions: [
+      {
+        questionText: "Which ancient civilization built the pyramids?",
+        options: [
+          { text: "Romans", isCorrect: false },
+          { text: "Greeks", isCorrect: false },
+          { text: "Egyptians", isCorrect: true },
+          { text: "Mayans", isCorrect: false },
+        ],
+        explanation: "The ancient Egyptians built the famous pyramids as tombs for their pharaohs.",
+        points: 1,
+      },
+      {
+        questionText: "What was the primary language of the Roman Empire?",
+        options: [
+          { text: "Greek", isCorrect: false },
+          { text: "Latin", isCorrect: true },
+          { text: "Hebrew", isCorrect: false },
+          { text: "Arabic", isCorrect: false },
+        ],
+        explanation: "Latin was the official language of ancient Rome and the Roman Empire.",
+        points: 1,
+      },
+      {
+        questionText: "Which civilization invented the wheel?",
+        options: [
+          { text: "Mesopotamians", isCorrect: true },
+          { text: "Egyptians", isCorrect: false },
+          { text: "Chinese", isCorrect: false },
+          { text: "Indians", isCorrect: false },
+        ],
+        explanation: "The wheel was invented by the Mesopotamians around 3500 BCE.",
+        points: 1,
+      },
+    ],
+    isActive: true,
+  },
+  {
+    title: "Fun with Science",
+    description: "Test your general knowledge about science!",
+    subject: "General Knowledge",
+    gradeLevel: "3",
+    difficulty: "Easy",
+    timeLimit: 12,
+    questions: [
+      {
+        questionText: "What is the largest planet in our solar system?",
+        options: [
+          { text: "Earth", isCorrect: false },
+          { text: "Mars", isCorrect: false },
+          { text: "Jupiter", isCorrect: true },
+          { text: "Saturn", isCorrect: false },
+        ],
+        explanation: "Jupiter is the largest planet in our solar system, even bigger than all other planets combined!",
+        points: 1,
+      },
+      {
+        questionText: "How many legs does a spider have?",
+        options: [
+          { text: "6", isCorrect: false },
+          { text: "8", isCorrect: true },
+          { text: "10", isCorrect: false },
+          { text: "12", isCorrect: false },
+        ],
+        explanation: "All spiders have 8 legs, which helps distinguish them from insects that have 6 legs.",
+        points: 1,
+      },
+      {
+        questionText: "What do plants need to make their own food?",
+        options: [
+          { text: "Sunlight and water", isCorrect: true },
+          { text: "Soil and rocks", isCorrect: false },
+          { text: "Air and fire", isCorrect: false },
+          { text: "Wind and rain", isCorrect: false },
+        ],
+        explanation: "Plants use sunlight, water, and carbon dioxide to make food through photosynthesis.",
+        points: 1,
+      },
+    ],
+    isActive: true,
+  },
 ];
 
-async function seedQuizData() {
-  try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+// Export for use in seedProduction.js
+export { quizzes };
 
-    console.log("✅ Connected to MongoDB");
-    await Quiz.deleteMany();
-    await Quiz.insertMany(quizzes);
-    console.log("🎉 Quiz data seeded successfully!");
-    process.exit();
-  } catch (error) {
-    console.error("❌ Error seeding quiz data:", error);
-    process.exit(1);
+// Only run this function if this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  async function seedQuizData() {
+    try {
+      await mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+
+      console.log("✅ Connected to MongoDB");
+      await Quiz.deleteMany();
+      await Quiz.insertMany(quizzes);
+      console.log("🎉 Quiz data seeded successfully!");
+      process.exit();
+    } catch (error) {
+      console.error("❌ Error seeding quiz data:", error);
+      process.exit(1);
+    }
   }
-}
 
-seedQuizData();
+  seedQuizData();
+}

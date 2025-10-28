@@ -151,36 +151,53 @@ exports.getUserProfile = async (req, res) => {
  */
 exports.updateUserProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.user._id).select('+password');
     
-    if (user) {
-      user.username = req.body.username || user.username;
-      user.email = req.body.email || user.email;
-      user.grade = req.body.grade || user.grade;
-      
-      if (req.body.password) {
-        user.password = req.body.password;
-      }
-      
-      const updatedUser = await user.save();
-      
-      res.status(200).json({
-        success: true,
-        user: {
-          _id: updatedUser._id,
-          username: updatedUser.username,
-          email: updatedUser.email,
-          role: updatedUser.role,
-          grade: updatedUser.grade,
-        },
-        token: generateToken(updatedUser._id),
-      });
-    } else {
-      res.status(404).json({
+    if (!user) {
+      return res.status(404).json({
         success: false,
         message: 'User not found',
       });
     }
+    
+    // If user is trying to change password, verify current password
+    if (req.body.password && req.body.currentPassword) {
+      const isMatch = await user.matchPassword(req.body.currentPassword);
+      
+      if (!isMatch) {
+        return res.status(401).json({
+          success: false,
+          message: 'Current password is incorrect',
+        });
+      }
+      
+      user.password = req.body.password;
+    } else if (req.body.password && !req.body.currentPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Current password is required to change password',
+      });
+    }
+    
+    // Update other fields
+    user.username = req.body.username || user.username;
+    user.email = req.body.email || user.email;
+    user.grade = req.body.grade || user.grade;
+    
+    const updatedUser = await user.save();
+    
+    res.status(200).json({
+      success: true,
+      user: {
+        _id: updatedUser._id,
+        username: updatedUser.username,
+        email: updatedUser.email,
+        role: updatedUser.role,
+        grade: updatedUser.grade,
+        progress: updatedUser.progress,
+      },
+      token: generateToken(updatedUser._id),
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
