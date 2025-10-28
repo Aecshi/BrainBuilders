@@ -95,4 +95,6 @@ export const historicalAdventureAPI = {
   deleteHistoricalAdventure: (id: string) => api.delete(`/historical-adventures/${id}`),
 };
 
+// Export api as both named and default export for flexibility
+export { api };
 export default api;
