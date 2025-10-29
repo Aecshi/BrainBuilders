@@ -7,7 +7,7 @@ const quizzes = [
     subject: "English",
     gradeLevel: "3",
     difficulty: "Easy",
-    timeLimit: 10,
+    timeLimit: 15,
     questions: [
       {
         questionText:
@@ -44,6 +44,50 @@ const quizzes = [
         ],
         explanation:
           "An exclamation point (!) is used to end exclamatory sentences that express strong emotion.",
+        points: 1,
+      },
+      {
+        questionText: 'What is a verb?',
+        options: [
+          { text: "A person, place, or thing", isCorrect: false },
+          { text: "An action word", isCorrect: true },
+          { text: "A describing word", isCorrect: false },
+          { text: "A connecting word", isCorrect: false },
+        ],
+        explanation: "A verb is an action word like run, jump, think, or eat.",
+        points: 1,
+      },
+      {
+        questionText: 'Which word is an adjective in this sentence: "The big dog barked loudly."?',
+        options: [
+          { text: "dog", isCorrect: false },
+          { text: "big", isCorrect: true },
+          { text: "barked", isCorrect: false },
+          { text: "loudly", isCorrect: false },
+        ],
+        explanation: "An adjective describes a noun. 'Big' describes the dog.",
+        points: 1,
+      },
+      {
+        questionText: "What is a complete sentence?",
+        options: [
+          { text: "Running fast", isCorrect: false },
+          { text: "The boy.", isCorrect: false },
+          { text: "The boy runs fast.", isCorrect: true },
+          { text: "Fast and quick", isCorrect: false },
+        ],
+        explanation: "A complete sentence has a subject (who) and a predicate (what they do).",
+        points: 1,
+      },
+      {
+        questionText: "Which word should be capitalized?",
+        options: [
+          { text: "school", isCorrect: false },
+          { text: "tuesday", isCorrect: true },
+          { text: "happy", isCorrect: false },
+          { text: "running", isCorrect: false },
+        ],
+        explanation: "Days of the week like Tuesday should always be capitalized.",
         points: 1,
       },
     ],

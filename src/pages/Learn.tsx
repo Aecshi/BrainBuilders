@@ -23,9 +23,18 @@ const Learn = () => {
   const [currentChallenge, setCurrentChallenge] = useState<any>(null);
 
   // Fetch word challenges from API
-  const { data: wordChallenges, isLoading, error } = useWordChallenges({ type: selectedType });
+  const { data: allWordChallenges, isLoading, error } = useWordChallenges({ type: selectedType });
+  
+  // Filter word challenges by user's grade level
+  const wordChallenges = allWordChallenges?.filter((challenge: any) => {
+    // If no user or no grade, show all challenges
+    if (!user || !user.grade) return true;
+    
+    // Match grade level
+    return challenge.gradeLevel === user.grade || challenge.gradeLevel === user.grade.toString();
+  });
 
-  console.log("Learn page data:", { wordChallenges, isLoading, error });
+  console.log("Learn page data:", { wordChallenges, allWordChallenges, userGrade: user?.grade, isLoading, error });
 
   // Set a default challenge when challenges are loaded
   useEffect(() => {

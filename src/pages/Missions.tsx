@@ -19,7 +19,16 @@ const Missions = () => {
   const [selectedChoice, setSelectedChoice] = useState<any>(null);
   const [showLearningPoint, setShowLearningPoint] = useState(false);
   
-  const { data: historicalAdventures, isLoading, error } = useHistoricalAdventures({ era });
+  const { data: allHistoricalAdventures, isLoading, error } = useHistoricalAdventures({ era });
+  
+  // Filter historical adventures by user's grade level
+  const historicalAdventures = allHistoricalAdventures?.filter((adventure: any) => {
+    // If no user or no grade, show all adventures
+    if (!user || !user.grade) return true;
+    
+    // Match grade level
+    return adventure.gradeLevel === user.grade || adventure.gradeLevel === user.grade.toString();
+  });
 
   useEffect(() => {
     if (historicalAdventures && historicalAdventures.length > 0 && !currentAdventure) {

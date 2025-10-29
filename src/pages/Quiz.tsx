@@ -21,9 +21,19 @@ const Quiz = () => {
   
   // Add debugging logs
   console.log("Subject selected:", subject);
+  console.log("User grade level:", user?.grade);
   
-  // Fetch quizzes from API
-  const { data: quizzes, isLoading, error } = useQuizzes({ subject });
+  // Fetch quizzes from API - filter by subject
+  const { data: allQuizzes, isLoading, error } = useQuizzes({ subject });
+  
+  // Filter quizzes by user's grade level (client-side filtering)
+  const quizzes = allQuizzes?.filter((quiz: any) => {
+    // If no user or no grade, show all quizzes
+    if (!user || !user.grade) return true;
+    
+    // Match grade level (handle both string and number comparisons)
+    return quiz.gradeLevel === user.grade || quiz.gradeLevel === user.grade.toString();
+  });
   
   // Log the API response
   console.log("API response:", { quizzes, isLoading, error });
