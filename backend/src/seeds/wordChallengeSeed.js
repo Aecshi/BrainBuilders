@@ -1,5 +1,6 @@
 // Sample word challenge seed data
 // COMPREHENSIVE WORD CHALLENGES - ALL GRADE LEVELS (K-6) WITH 5 WORDS EACH
+// Each grade level now has 3 challenges with 5 words each = 15 words per grade
 
 const wordChallenges = [
   // ==================== KINDERGARTEN (K) ====================
@@ -80,6 +81,43 @@ const wordChallenges = [
       },
     ],
     instructions: 'Match each word with its meaning!',
+    isActive: true
+  },
+  {
+    title: 'Spelling Challenge: Simple Animals',
+    description: 'Spell the names of common animals!',
+    gradeLevel: 'K',
+    difficulty: 'Easy',
+    type: 'Spelling',
+    timeLimit: 5,
+    words: [
+      {
+        word: 'cat',
+        hint: 'A pet that says meow.',
+        points: 1
+      },
+      {
+        word: 'dog',
+        hint: 'A pet that says woof.',
+        points: 1
+      },
+      {
+        word: 'bird',
+        hint: 'An animal that flies and chirps.',
+        points: 1
+      },
+      {
+        word: 'fish',
+        hint: 'An animal that swims in water.',
+        points: 1
+      },
+      {
+        word: 'pig',
+        hint: 'A farm animal that says oink.',
+        points: 1
+      },
+    ],
+    instructions: 'Type the name of each animal!',
     isActive: true
   },
 
@@ -163,6 +201,43 @@ const wordChallenges = [
     instructions: 'Match each day with its definition!',
     isActive: true
   },
+  {
+    title: 'Spelling Challenge: Family Words',
+    description: 'Spell words about family members!',
+    gradeLevel: '1',
+    difficulty: 'Easy',
+    type: 'Spelling',
+    timeLimit: 5,
+    words: [
+      {
+        word: 'mom',
+        hint: 'Another word for mother.',
+        points: 1
+      },
+      {
+        word: 'dad',
+        hint: 'Another word for father.',
+        points: 1
+      },
+      {
+        word: 'sister',
+        hint: 'A girl in your family.',
+        points: 1
+      },
+      {
+        word: 'brother',
+        hint: 'A boy in your family.',
+        points: 1
+      },
+      {
+        word: 'baby',
+        hint: 'A very young child.',
+        points: 1
+      },
+    ],
+    instructions: 'Spell these family words correctly!',
+    isActive: true
+  },
 
   // ==================== GRADE 2 ====================
   {
@@ -244,6 +319,43 @@ const wordChallenges = [
     instructions: 'Match each weather word with its meaning!',
     isActive: true
   },
+  {
+    title: 'Spelling Challenge: Action Words',
+    description: 'Learn to spell verbs - action words!',
+    gradeLevel: '2',
+    difficulty: 'Easy',
+    type: 'Spelling',
+    timeLimit: 6,
+    words: [
+      {
+        word: 'run',
+        hint: 'To move fast on your feet.',
+        points: 1
+      },
+      {
+        word: 'jump',
+        hint: 'To push yourself off the ground.',
+        points: 1
+      },
+      {
+        word: 'play',
+        hint: 'To have fun with games or toys.',
+        points: 1
+      },
+      {
+        word: 'read',
+        hint: 'To look at words and understand them.',
+        points: 1
+      },
+      {
+        word: 'write',
+        hint: 'To make letters and words with a pencil.',
+        points: 1
+      },
+    ],
+    instructions: 'Spell these action words!',
+    isActive: true
+  },
 
   // ==================== GRADE 3 ====================
   {
@@ -320,6 +432,48 @@ const wordChallenges = [
     instructions: 'Spell these delicious food words!',
     isActive: true
   },
+  {
+    title: 'Vocabulary Builder: Place Words',
+    description: 'Learn words for different places!',
+    gradeLevel: '3',
+    difficulty: 'Easy',
+    type: 'Vocabulary',
+    timeLimit: 6,
+    words: [
+      {
+        word: 'library',
+        definition: 'A place where you borrow books.',
+        sentence: 'We go to the library to find new books.',
+        points: 1
+      },
+      {
+        word: 'hospital',
+        definition: 'A place where doctors help sick people.',
+        sentence: 'My mom works at the hospital.',
+        points: 1
+      },
+      {
+        word: 'museum',
+        definition: 'A place where you can see art and history.',
+        sentence: 'We saw dinosaur bones at the museum.',
+        points: 1
+      },
+      {
+        word: 'park',
+        definition: 'An outdoor place to play and have fun.',
+        sentence: 'We play on the swings at the park.',
+        points: 1
+      },
+      {
+        word: 'store',
+        definition: 'A place where you buy things.',
+        sentence: 'We buy food at the grocery store.',
+        points: 1
+      },
+    ],
+    instructions: 'Match each place with what it is!',
+    isActive: true
+  },
 
   // ==================== GRADE 4 ====================
   {
@@ -382,13 +536,13 @@ const wordChallenges = [
         word: 'precipitation',
         definition: 'Water that falls from clouds.',
         sentence: 'We had a lot of precipitation this week.',
-        points: 2
+        points: 1
       },
       {
         word: 'atmosphere',
         definition: 'The layer of gases surrounding Earth.',
         sentence: 'The atmosphere protects us from space.',
-        points: 2
+        points: 1
       },
       {
         word: 'humidity',
@@ -404,6 +558,43 @@ const wordChallenges = [
       },
     ],
     instructions: 'Match each weather word with its definition!',
+    isActive: true
+  },
+  {
+    title: 'Spelling Challenge: Compound Words',
+    description: 'Learn to spell words made from two words!',
+    gradeLevel: '4',
+    difficulty: 'Medium',
+    type: 'Spelling',
+    timeLimit: 7,
+    words: [
+      {
+        word: 'baseball',
+        hint: 'A sport with a bat and ball.',
+        points: 1
+      },
+      {
+        word: 'butterfly',
+        hint: 'An insect with colorful wings.',
+        points: 1
+      },
+      {
+        word: 'rainbow',
+        hint: 'Colorful arc in the sky after rain.',
+        points: 1
+      },
+      {
+        word: 'sunflower',
+        hint: 'A tall yellow flower that faces the sun.',
+        points: 1
+      },
+      {
+        word: 'backpack',
+        hint: 'A bag you carry on your back.',
+        points: 1
+      },
+    ],
+    instructions: 'Spell these compound words!',
     isActive: true
   },
 
@@ -426,7 +617,7 @@ const wordChallenges = [
         word: 'photosynthesis',
         definition: 'The process plants use to make food from sunlight.',
         sentence: 'Plants need sunlight for photosynthesis.',
-        points: 2
+        points: 1
       },
       {
         word: 'gravity',
@@ -462,13 +653,13 @@ const wordChallenges = [
         word: 'revolution',
         definition: 'A complete change in government.',
         sentence: 'The American Revolution led to independence.',
-        points: 2
+        points: 1
       },
       {
         word: 'civilization',
         definition: 'An advanced society with cities and culture.',
         sentence: 'Ancient Egypt was a great civilization.',
-        points: 2
+        points: 1
       },
       {
         word: 'democracy',
@@ -543,13 +734,13 @@ const wordChallenges = [
         word: 'photosynthesis',
         definition: 'The process plants use to make food from sunlight.',
         sentence: 'Chlorophyll helps plants perform photosynthesis.',
-        points: 2
+        points: 1
       },
       {
         word: 'molecule',
         definition: 'The smallest unit of a chemical compound.',
         sentence: 'A water molecule contains two hydrogen atoms.',
-        points: 2
+        points: 1
       },
       {
         word: 'organism',
@@ -561,7 +752,7 @@ const wordChallenges = [
         word: 'chromosome',
         definition: 'A structure in cells that carries genes.',
         sentence: 'Humans have 46 chromosomes in most cells.',
-        points: 2
+        points: 1
       },
       {
         word: 'hypothesis',
@@ -626,17 +817,17 @@ const wordChallenges = [
       {
         word: 'magnificent',
         hint: 'Extremely beautiful or impressive.',
-        points: 2
+        points: 1
       },
       {
         word: 'embarrass',
         hint: 'To make someone feel uncomfortable.',
-        points: 2
+        points: 1
       },
       {
         word: 'necessary',
         hint: 'Something that is needed.',
-        points: 2
+        points: 1
       },
       {
         word: 'environment',
