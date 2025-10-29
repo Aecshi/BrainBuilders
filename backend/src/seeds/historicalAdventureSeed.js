@@ -1,46 +1,45 @@
 // Sample historical adventure seed data
+// COMPREHENSIVE HISTORICAL ADVENTURES - ALL GRADE LEVELS (K-6) WITH GRADE-APPROPRIATE CONTENT
+
 const historicalAdventures = [
+  // ==================== KINDERGARTEN (K) ====================
   {
-    title: 'Ancient Egypt: Building the Pyramids',
-    description: 'Experience life as a builder during the construction of the Great Pyramids of Giza!',
+    title: 'The First Thanksgiving: Friends Share Food',
+    description: 'Learn about the Pilgrims and Native Americans sharing a meal!',
     era: 'Ancient',
-    gradeLevel: '5',
-    difficulty: 'Medium',
-    estimatedTime: 20,
+    gradeLevel: 'K',
+    difficulty: 'Easy',
+    estimatedTime: 10,
     scenarios: [
       {
-        title: 'The Call to Build',
-        description: 'You are a skilled builder living in ancient Egypt. The Pharaoh has ordered the construction of a massive pyramid, and you have been selected to join the workforce. What will you do?',
-        backgroundImage: 'egypt_village.jpg',
+        title: 'Meeting New Friends',
+        description: 'You are with the Pilgrims who just arrived in America. The Native Americans want to help you learn about the land. What do you do?',
+        backgroundImage: 'pilgrim_village.jpg',
         choices: [
           {
-            text: 'Accept the honor and join the construction team',
-            nextScenarioId: 'pyramid_site',
-            outcome: 'You journey to Giza to join thousands of other workers.',
+            text: 'Be friendly and learn from them',
+            nextScenarioId: 'friendship',
+            outcome: 'You make friends and learn to grow corn!',
             isHistoricallyAccurate: true,
-            learningPoint: 'Contrary to popular belief, the pyramids were not built by slaves but by paid workers who considered it an honor to work on the Pharaoh\'s tomb.'
+            learningPoint: 'The Pilgrims and Native Americans worked together and became friends.'
           },
           {
-            text: 'Refuse and try to escape to another kingdom',
-            nextScenarioId: 'escape_attempt',
-            outcome: 'You attempt to flee but are caught by the Pharaoh\'s guards.',
+            text: 'Hide and don\'t talk to anyone',
+            nextScenarioId: 'lonely',
+            outcome: 'You don\'t learn how to grow food and go hungry.',
             isHistoricallyAccurate: false,
-            learningPoint: 'Workers on the pyramids were actually well-treated, fed, and housed. They were not forced laborers as commonly depicted.'
+            learningPoint: 'Working together helped both groups survive.'
           }
         ],
         characters: [
           {
-            name: 'Village Elder',
-            role: 'Advisor',
-            imageUrl: 'village_elder.jpg',
+            name: 'Squanto',
+            role: 'Native American Helper',
+            imageUrl: 'squanto.jpg',
             dialogues: [
               {
-                text: 'The Pharaoh has chosen our village to send skilled builders. This is a great honor!',
+                text: 'I will teach you how to plant corn!',
                 order: 1
-              },
-              {
-                text: 'You will be well fed and housed during your time there. Your family will be taken care of in your absence.',
-                order: 2
               }
             ]
           }
@@ -48,26 +47,201 @@ const historicalAdventures = [
         isEnding: false,
         historicalFacts: [
           {
-            fact: 'The Great Pyramid of Giza was built around 2560 BCE for Pharaoh Khufu.',
-            source: 'Ancient Egyptian Historical Records'
-          },
-          {
-            fact: 'It took approximately 20 years to build the Great Pyramid.',
-            source: 'Archaeological evidence and historical records'
+            fact: 'Native Americans taught the Pilgrims how to grow corn and catch fish.',
+            source: 'American History for Kids'
           }
         ]
       }
     ],
     learningObjectives: [
-      'Understand how the pyramids were actually built',
-      'Learn about daily life in ancient Egypt',
-      'Explore the social structure and labor organization of ancient Egyptian society'
+      'Learn about sharing and helping others',
+      'Understand that different people can work together',
+      'Discover the history of Thanksgiving'
     ],
     isActive: true
   },
+
+  // ==================== GRADE 1 ====================
+  {
+    title: 'George Washington: Our First President',
+    description: 'Meet George Washington and learn about being a leader!',
+    era: 'Industrial Revolution',
+    gradeLevel: '1',
+    difficulty: 'Easy',
+    estimatedTime: 10,
+    scenarios: [
+      {
+        title: 'Leading the Way',
+        description: 'You are helping George Washington lead the new country. What do you think is most important for a leader to do?',
+        backgroundImage: 'washington_dc.jpg',
+        choices: [
+          {
+            text: 'Listen to people and be fair',
+            nextScenarioId: 'good_leader',
+            outcome: 'People trust you and the country grows strong!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'George Washington was known for being fair and honest.'
+          },
+          {
+            text: 'Only do what you want',
+            nextScenarioId: 'bad_leader',
+            outcome: 'People are unhappy and don\'t follow you.',
+            isHistoricallyAccurate: false,
+            learningPoint: 'Good leaders listen to others and make fair decisions.'
+          }
+        ],
+        characters: [
+          {
+            name: 'George Washington',
+            role: 'First President',
+            imageUrl: 'washington.jpg',
+            dialogues: [
+              {
+                text: 'A good leader must be honest and fair to everyone.',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'George Washington was the first President of the United States.',
+            source: 'American History'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Learn about George Washington',
+      'Understand what makes a good leader',
+      'Discover the importance of fairness'
+    ],
+    isActive: true
+  },
+
+  // ==================== GRADE 2 ====================
+  {
+    title: 'The Liberty Bell: Symbol of Freedom',
+    description: 'Discover the story of the Liberty Bell!',
+    era: 'Industrial Revolution',
+    gradeLevel: '2',
+    difficulty: 'Easy',
+    estimatedTime: 12,
+    scenarios: [
+      {
+        title: 'Ringing for Freedom',
+        description: 'You are in Philadelphia when the Liberty Bell rings to announce independence! What does freedom mean to you?',
+        backgroundImage: 'liberty_bell.jpg',
+        choices: [
+          {
+            text: 'Freedom means everyone should be treated fairly',
+            nextScenarioId: 'celebrate_freedom',
+            outcome: 'You celebrate with others and learn about American freedom!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'The Liberty Bell became a symbol of freedom and justice for all people.'
+          },
+          {
+            text: 'Freedom only matters for some people',
+            nextScenarioId: 'unfair',
+            outcome: 'You realize that real freedom means fairness for everyone.',
+            isHistoricallyAccurate: false,
+            learningPoint: 'True freedom and justice should be for all people.'
+          }
+        ],
+        characters: [
+          {
+            name: 'Town Crier',
+            role: 'News Announcer',
+            imageUrl: 'town_crier.jpg',
+            dialogues: [
+              {
+                text: 'Hear ye! The Liberty Bell rings for freedom!',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'The Liberty Bell is a symbol of American independence and freedom.',
+            source: 'American History Records'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Learn about the Liberty Bell',
+      'Understand the concept of freedom',
+      'Discover American symbols'
+    ],
+    isActive: true
+  },
+
+  // ==================== GRADE 3 ====================
+  {
+    title: 'The Oregon Trail: Journey to the West',
+    description: 'Travel with pioneers on the Oregon Trail!',
+    era: 'Industrial Revolution',
+    gradeLevel: '3',
+    difficulty: 'Easy',
+    estimatedTime: 15,
+    scenarios: [
+      {
+        title: 'Starting the Long Journey',
+        description: 'Your family is preparing to travel west on the Oregon Trail. It will take months! What will you pack?',
+        backgroundImage: 'oregon_trail.jpg',
+        choices: [
+          {
+            text: 'Pack food, water, and warm clothes',
+            nextScenarioId: 'good_preparation',
+            outcome: 'Your family stays healthy and safe on the journey!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'Pioneers needed to pack carefully for the long, difficult journey.'
+          },
+          {
+            text: 'Pack only toys and games',
+            nextScenarioId: 'poor_planning',
+            outcome: 'Your family runs out of food and water.',
+            isHistoricallyAccurate: false,
+            learningPoint: 'Survival supplies were most important for the journey west.'
+          }
+        ],
+        characters: [
+          {
+            name: 'Wagon Master',
+            role: 'Guide',
+            imageUrl: 'wagon_master.jpg',
+            dialogues: [
+              {
+                text: 'Pack smart! This journey is 2,000 miles long!',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'The Oregon Trail was 2,000 miles long and took 4-6 months to travel.',
+            source: 'American Western Expansion History'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Learn about westward expansion',
+      'Understand pioneer challenges',
+      'Discover life in the 1800s'
+    ],
+    isActive: true
+  },
+
+  // ==================== GRADE 4 ====================
   {
     title: 'American Revolution: Boston Tea Party',
-    description: 'Take part in the famous Boston Tea Party that sparked the American Revolution!',
+    description: 'Take part in the famous Boston Tea Party!',
     era: 'Industrial Revolution',
     gradeLevel: '4',
     difficulty: 'Medium',
@@ -75,22 +249,22 @@ const historicalAdventures = [
     scenarios: [
       {
         title: 'The Secret Meeting',
-        description: 'Boston, December 16, 1773. You are attending a secret meeting at the Old South Meeting House. The colonists are angry about the tea tax imposed by the British. Samuel Adams is speaking about taking action.',
+        description: 'Boston, December 16, 1773. Colonists are angry about the tea tax. Samuel Adams is organizing a protest. What will you do?',
         backgroundImage: 'boston_meeting_house.jpg',
         choices: [
           {
-            text: 'Volunteer to join the protest at the harbor',
+            text: 'Join the protest at the harbor',
             nextScenarioId: 'boston_harbor',
-            outcome: 'You join a group disguised as Mohawk Indians headed to Griffin\'s Wharf.',
+            outcome: 'You dress as a Mohawk Indian and dump tea in the harbor!',
             isHistoricallyAccurate: true,
-            learningPoint: 'The Boston Tea Party protesters disguised themselves as Native Americans to hide their identities.'
+            learningPoint: 'The Boston Tea Party was a protest against taxation without representation.'
           },
           {
-            text: 'Stay behind to help spread the news',
-            nextScenarioId: 'spread_news',
-            outcome: 'You remain at the meeting house to help organize and spread the word about what happens.',
+            text: 'Stay loyal to the British',
+            nextScenarioId: 'loyalist',
+            outcome: 'You watch as history unfolds without you.',
             isHistoricallyAccurate: true,
-            learningPoint: 'While some colonists took direct action, others helped by spreading news and rallying support.'
+            learningPoint: 'Not all colonists supported independence; some remained loyal to Britain.'
           }
         ],
         characters: [
@@ -100,12 +274,8 @@ const historicalAdventures = [
             imageUrl: 'samuel_adams.jpg',
             dialogues: [
               {
-                text: 'This tea tax is just another way for King George to control us without our consent!',
+                text: 'No taxation without representation!',
                 order: 1
-              },
-              {
-                text: 'Tonight, we will show the British that we will not stand for taxation without representation!',
-                order: 2
               }
             ]
           }
@@ -113,26 +283,22 @@ const historicalAdventures = [
         isEnding: false,
         historicalFacts: [
           {
-            fact: 'The Boston Tea Party took place on December 16, 1773.',
-            source: 'American Historical Archives'
-          },
-          {
-            fact: 'The protesters destroyed 342 chests of tea, worth about $1.7 million in today\'s currency.',
-            source: 'Boston Historical Society Records'
+            fact: 'The Boston Tea Party happened on December 16, 1773.',
+            source: 'American Revolutionary History'
           }
         ]
       }
     ],
     learningObjectives: [
       'Understand the causes of the American Revolution',
-      'Learn about colonial resistance to British taxation',
-      'Explore the concept of "taxation without representation"'
+      'Learn about colonial protests',
+      'Explore taxation without representation'
     ],
     isActive: true
   },
   {
     title: 'Medieval Europe: The Knight\'s Quest',
-    description: 'Become a knight in medieval Europe and learn about chivalry and feudalism!',
+    description: 'Become a knight in medieval Europe!',
     era: 'Ancient',
     gradeLevel: '4',
     difficulty: 'Medium',
@@ -140,22 +306,22 @@ const historicalAdventures = [
     scenarios: [
       {
         title: 'The King\'s Tournament',
-        description: 'You are a young knight competing in the king\'s tournament. The king is watching from his throne. How will you prove your worth?',
+        description: 'You are a young knight competing in the king\'s tournament. How will you prove your worth?',
         backgroundImage: 'medieval_tournament.jpg',
         choices: [
           {
-            text: 'Follow the code of chivalry and fight honorably',
+            text: 'Fight with honor following the code of chivalry',
             nextScenarioId: 'honorable_victory',
-            outcome: 'You win the tournament fairly and earn the king\'s respect.',
+            outcome: 'You win the tournament fairly and earn the king\'s respect!',
             isHistoricallyAccurate: true,
-            learningPoint: 'Knights followed a code of chivalry that emphasized honor, courage, and protecting the weak.'
+            learningPoint: 'Knights followed a code of chivalry emphasizing honor and courage.'
           },
           {
             text: 'Cheat to win the tournament',
             nextScenarioId: 'disgrace',
-            outcome: 'You are caught cheating and lose your title as a knight.',
+            outcome: 'You are caught and lose your title as a knight.',
             isHistoricallyAccurate: false,
-            learningPoint: 'A knight who broke the code of chivalry could lose their title and honor.'
+            learningPoint: 'A knight who broke the code of chivalry could lose their title.'
           }
         ],
         characters: [
@@ -174,7 +340,7 @@ const historicalAdventures = [
         isEnding: false,
         historicalFacts: [
           {
-            fact: 'Knights in medieval Europe followed a code of chivalry that emphasized honor, bravery, and loyalty.',
+            fact: 'Knights followed a code of chivalry that emphasized honor and loyalty.',
             source: 'Medieval European History'
           }
         ]
@@ -187,9 +353,127 @@ const historicalAdventures = [
     ],
     isActive: true
   },
+
+  // ==================== GRADE 5 ====================
+  {
+    title: 'Ancient Egypt: Building the Pyramids',
+    description: 'Experience life as a builder during pyramid construction!',
+    era: 'Ancient',
+    gradeLevel: '5',
+    difficulty: 'Medium',
+    estimatedTime: 20,
+    scenarios: [
+      {
+        title: 'The Call to Build',
+        description: 'You are a skilled builder in ancient Egypt. The Pharaoh has ordered the construction of a massive pyramid. What will you do?',
+        backgroundImage: 'egypt_village.jpg',
+        choices: [
+          {
+            text: 'Accept the honor and join the construction team',
+            nextScenarioId: 'pyramid_site',
+            outcome: 'You journey to Giza to join thousands of other workers.',
+            isHistoricallyAccurate: true,
+            learningPoint: 'Pyramids were built by paid workers who considered it an honor, not slaves.'
+          },
+          {
+            text: 'Refuse and try to escape',
+            nextScenarioId: 'escape_attempt',
+            outcome: 'You attempt to flee but are caught.',
+            isHistoricallyAccurate: false,
+            learningPoint: 'Workers were actually well-treated, fed, and housed during construction.'
+          }
+        ],
+        characters: [
+          {
+            name: 'Village Elder',
+            role: 'Advisor',
+            imageUrl: 'village_elder.jpg',
+            dialogues: [
+              {
+                text: 'This is a great honor! You will be well fed and housed.',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'The Great Pyramid of Giza was built around 2560 BCE for Pharaoh Khufu.',
+            source: 'Ancient Egyptian Historical Records'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Understand how pyramids were actually built',
+      'Learn about daily life in ancient Egypt',
+      'Explore Egyptian social structure'
+    ],
+    isActive: true
+  },
+  {
+    title: 'Ancient Greece: The Olympic Games',
+    description: 'Compete in the original Olympic Games!',
+    era: 'Ancient',
+    gradeLevel: '5',
+    difficulty: 'Medium',
+    estimatedTime: 15,
+    scenarios: [
+      {
+        title: 'Arrival at Olympia',
+        description: 'You are an athlete arriving at Olympia for the ancient Olympic Games. How will you prepare?',
+        backgroundImage: 'ancient_olympia.jpg',
+        choices: [
+          {
+            text: 'Train honorably and represent your city-state',
+            nextScenarioId: 'olympic_competition',
+            outcome: 'You compete fairly and earn respect from athletes across Greece!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'Ancient Olympics were held every four years to honor Zeus.'
+          },
+          {
+            text: 'Try to sabotage other athletes',
+            nextScenarioId: 'disqualification',
+            outcome: 'You are caught and banned from the Games permanently.',
+            isHistoricallyAccurate: false,
+            learningPoint: 'Cheating was severely punished in ancient Olympics.'
+          }
+        ],
+        characters: [
+          {
+            name: 'Olympic Judge',
+            role: 'Official',
+            imageUrl: 'greek_judge.jpg',
+            dialogues: [
+              {
+                text: 'All athletes must swear to compete fairly!',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'The ancient Olympic Games began in 776 BCE in Olympia, Greece.',
+            source: 'Ancient Greek History'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Learn about ancient Greek culture',
+      'Understand the origins of the Olympics',
+      'Explore ancient Greek values'
+    ],
+    isActive: true
+  },
+
+  // ==================== GRADE 6 ====================
   {
     title: 'Civil Rights Movement: The Montgomery Bus Boycott',
-    description: 'Experience the fight for equality during the Civil Rights Movement!',
+    description: 'Experience the fight for equality!',
     era: 'Modern',
     gradeLevel: '6',
     difficulty: 'Hard',
@@ -197,22 +481,22 @@ const historicalAdventures = [
     scenarios: [
       {
         title: 'A Stand for Justice',
-        description: 'Montgomery, Alabama, 1955. Rosa Parks has refused to give up her seat on a bus. The African American community is organizing a boycott. What will you do?',
+        description: 'Montgomery, Alabama, 1955. Rosa Parks has refused to give up her seat. The African American community is organizing a boycott. What will you do?',
         backgroundImage: 'montgomery_bus.jpg',
         choices: [
           {
             text: 'Join the boycott and walk to work every day',
             nextScenarioId: 'boycott_support',
-            outcome: 'You walk miles each day, showing solidarity with the movement for equality.',
+            outcome: 'You walk miles each day, showing solidarity for equality.',
             isHistoricallyAccurate: true,
-            learningPoint: 'The Montgomery Bus Boycott lasted 381 days, with African Americans walking, carpooling, and organizing rides instead of using segregated buses.'
+            learningPoint: 'The Montgomery Bus Boycott lasted 381 days and led to desegregation.'
           },
           {
-            text: 'Continue riding the bus to avoid trouble',
+            text: 'Continue riding the bus',
             nextScenarioId: 'maintain_status_quo',
-            outcome: 'You continue riding, but feel conflicted about not supporting the cause.',
+            outcome: 'You feel conflicted about not supporting the cause.',
             isHistoricallyAccurate: false,
-            learningPoint: 'The success of the Montgomery Bus Boycott depended on widespread community participation and sacrifice.'
+            learningPoint: 'Success depended on widespread community participation.'
           }
         ],
         characters: [
@@ -224,10 +508,6 @@ const historicalAdventures = [
               {
                 text: 'We must use nonviolent resistance to fight injustice.',
                 order: 1
-              },
-              {
-                text: 'Together, we can change the world.',
-                order: 2
               }
             ]
           }
@@ -235,12 +515,8 @@ const historicalAdventures = [
         isEnding: false,
         historicalFacts: [
           {
-            fact: 'The Montgomery Bus Boycott began on December 5, 1955, after Rosa Parks was arrested.',
-            source: 'Civil Rights Movement Historical Archives'
-          },
-          {
-            fact: 'The boycott lasted 381 days and led to the Supreme Court ruling that segregation on buses was unconstitutional.',
-            source: 'US History Records'
+            fact: 'The Montgomery Bus Boycott began on December 5, 1955.',
+            source: 'Civil Rights Movement Archives'
           }
         ]
       }
@@ -248,74 +524,13 @@ const historicalAdventures = [
     learningObjectives: [
       'Understand the Civil Rights Movement',
       'Learn about nonviolent resistance',
-      'Explore the fight for equality in America'
-    ],
-    isActive: true
-  },
-  {
-    title: 'Ancient Greece: The Olympic Games',
-    description: 'Travel to ancient Greece and compete in the original Olympic Games!',
-    era: 'Ancient',
-    gradeLevel: '5',
-    difficulty: 'Medium',
-    estimatedTime: 15,
-    scenarios: [
-      {
-        title: 'Arrival at Olympia',
-        description: 'You are an athlete arriving at Olympia for the ancient Olympic Games. Athletes from all Greek city-states are here. How will you prepare?',
-        backgroundImage: 'ancient_olympia.jpg',
-        choices: [
-          {
-            text: 'Train honorably and represent your city-state with pride',
-            nextScenarioId: 'olympic_competition',
-            outcome: 'You compete fairly and earn respect from athletes across Greece.',
-            isHistoricallyAccurate: true,
-            learningPoint: 'The ancient Olympics were held every four years to honor Zeus, and athletes competed for glory, not prizes.'
-          },
-          {
-            text: 'Try to sabotage other athletes to win',
-            nextScenarioId: 'disqualification',
-            outcome: 'You are caught and banned from the Games permanently.',
-            isHistoricallyAccurate: false,
-            learningPoint: 'Cheating in the ancient Olympics was severely punished, and athletes took an oath to compete fairly.'
-          }
-        ],
-        characters: [
-          {
-            name: 'Olympic Judge',
-            role: 'Official',
-            imageUrl: 'greek_judge.jpg',
-            dialogues: [
-              {
-                text: 'All athletes must swear to compete fairly and honor Zeus.',
-                order: 1
-              }
-            ]
-          }
-        ],
-        isEnding: false,
-        historicalFacts: [
-          {
-            fact: 'The ancient Olympic Games began in 776 BCE in Olympia, Greece.',
-            source: 'Ancient Greek History'
-          },
-          {
-            fact: 'Only free Greek men could compete, and women were not allowed to watch.',
-            source: 'Olympic Historical Records'
-          }
-        ]
-      }
-    ],
-    learningObjectives: [
-      'Learn about ancient Greek culture',
-      'Understand the origins of the Olympics',
-      'Explore ancient Greek values and traditions'
+      'Explore the fight for equality'
     ],
     isActive: true
   },
   {
     title: 'World War II: D-Day Invasion',
-    description: 'Experience the historic D-Day invasion of Normandy!',
+    description: 'Experience the historic D-Day invasion!',
     era: 'Modern',
     gradeLevel: '6',
     difficulty: 'Hard',
@@ -323,22 +538,22 @@ const historicalAdventures = [
     scenarios: [
       {
         title: 'Operation Overlord',
-        description: 'June 6, 1944. You are part of the Allied forces preparing to land on the beaches of Normandy, France. This is a critical mission to liberate Europe from Nazi control.',
+        description: 'June 6, 1944. You are part of the Allied forces preparing to land on Normandy beaches. This mission will help liberate Europe.',
         backgroundImage: 'normandy_beach.jpg',
         choices: [
           {
-            text: 'Follow orders and advance with your unit onto the beach',
+            text: 'Follow orders and advance with your unit',
             nextScenarioId: 'beach_landing',
-            outcome: 'You land on Omaha Beach and work with your fellow soldiers to secure the beachhead.',
+            outcome: 'You land on Omaha Beach and work to secure the beachhead.',
             isHistoricallyAccurate: true,
-            learningPoint: 'D-Day involved over 150,000 Allied troops landing on five beaches in Normandy. It was a turning point in WWII.'
+            learningPoint: 'D-Day involved over 150,000 Allied troops and was a turning point in WWII.'
           },
           {
-            text: 'Stay on the ship to avoid danger',
+            text: 'Stay on the ship',
             nextScenarioId: 'mission_failure',
-            outcome: 'The mission fails without full troop support.',
+            outcome: 'The mission struggles without full troop support.',
             isHistoricallyAccurate: false,
-            learningPoint: 'The success of D-Day depended on the courage and sacrifice of thousands of soldiers who faced extreme danger.'
+            learningPoint: 'Success depended on the courage and sacrifice of thousands of soldiers.'
           }
         ],
         characters: [
@@ -359,10 +574,6 @@ const historicalAdventures = [
           {
             fact: 'D-Day, June 6, 1944, was the largest amphibious invasion in history.',
             source: 'World War II Historical Archives'
-          },
-          {
-            fact: 'Over 4,000 Allied soldiers died on D-Day, but their sacrifice helped liberate Europe.',
-            source: 'WWII Military Records'
           }
         ]
       }
@@ -370,68 +581,7 @@ const historicalAdventures = [
     learningObjectives: [
       'Understand World War II',
       'Learn about the D-Day invasion',
-      'Explore the Allied effort to defeat Nazi Germany'
-    ],
-    isActive: true
-  },
-  {
-    title: 'The Oregon Trail: Journey West',
-    description: 'Join pioneers traveling west on the Oregon Trail in the 1800s!',
-    era: 'Industrial Revolution',
-    gradeLevel: '4',
-    difficulty: 'Medium',
-    estimatedTime: 15,
-    scenarios: [
-      {
-        title: 'Starting the Journey',
-        description: 'Independence, Missouri, 1848. Your family is preparing for the long journey to Oregon. You need to pack supplies for the 2,000-mile trip. What will you prioritize?',
-        backgroundImage: 'oregon_trail_start.jpg',
-        choices: [
-          {
-            text: 'Pack essential supplies: food, water, medicine, and tools',
-            nextScenarioId: 'successful_preparation',
-            outcome: 'Your careful planning helps your family survive the journey.',
-            isHistoricallyAccurate: true,
-            learningPoint: 'Pioneers on the Oregon Trail had to carefully plan what to bring. Too much weight could slow down wagons, but too little could mean starvation.'
-          },
-          {
-            text: 'Pack only luxury items to sell in Oregon',
-            nextScenarioId: 'poor_planning',
-            outcome: 'Your family runs out of food and water halfway through the journey.',
-            isHistoricallyAccurate: false,
-            learningPoint: 'Many pioneers died on the Oregon Trail due to disease, accidents, and lack of supplies. Proper preparation was crucial.'
-          }
-        ],
-        characters: [
-          {
-            name: 'Wagon Master',
-            role: 'Trail Guide',
-            imageUrl: 'wagon_master.jpg',
-            dialogues: [
-              {
-                text: 'The trail is long and dangerous. Pack wisely!',
-                order: 1
-              }
-            ]
-          }
-        ],
-        isEnding: false,
-        historicalFacts: [
-          {
-            fact: 'The Oregon Trail was a 2,000-mile route used by pioneers to travel west from 1840-1860.',
-            source: 'American Western Expansion History'
-          },
-          {
-            fact: 'About 1 in 10 pioneers died on the Oregon Trail, mostly from disease.',
-            source: 'Pioneer Historical Records'
-          }
-        ]
-      }
-    ],
-    learningObjectives: [
-      'Understand westward expansion in America',
-      'Learn about pioneer life',
-      'Explore the challenges of the Oregon Trail'
+      'Explore the Allied effort against Nazi Germany'
     ],
     isActive: true
   },
