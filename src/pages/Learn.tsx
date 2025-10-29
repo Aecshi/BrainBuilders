@@ -79,16 +79,20 @@ const Learn = () => {
       setIsAnswerChecked(false);
       setIsCorrect(false);
     } else {
+      // Calculate final score (score state already includes current word if correct)
+      const finalScore = isCorrect ? score + currentChallenge.words[currentWordIndex].points : score;
       setShowResult(true);
       
-      // Save user progress if logged in
-      if (user) {
+      // Save user progress if logged in - ONLY SAVE ONCE at the end
+      if (user && currentChallenge._id) {
         updateProgress({
           type: 'wordChallenge',
           itemId: currentChallenge._id,
           data: {
-            score: score + (isCorrect ? currentChallenge.words[currentWordIndex].points : 0),
+            score: finalScore,
           },
+        }).catch(error => {
+          console.error('Failed to save word challenge progress:', error);
         });
       }
     }

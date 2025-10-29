@@ -63,11 +63,14 @@ const Missions = () => {
         setShowLearningPoint(false);
       } else {
         setShowResult(true);
-        if (user) {
+        // Save progress ONLY when adventure is truly complete
+        if (user && currentAdventure._id) {
           updateProgress({
             type: 'historicalAdventure',
             itemId: currentAdventure._id,
             data: { progress: newProgress, completed: true },
+          }).catch(error => {
+            console.error('Failed to save historical adventure progress:', error);
           });
         }
       }

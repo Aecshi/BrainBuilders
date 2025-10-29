@@ -171,22 +171,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const updateProgress = async (progressData: any): Promise<boolean> => {
     try {
-      setIsLoading(true);
       const { data } = await authAPI.updateProgress(progressData);
       
       if (data.success) {
-        // Update the user's progress locally
-        setUser(prev => {
-          if (!prev) return prev;
-          
-          return {
-            ...prev,
-            progress: {
-              ...prev.progress,
-              [progressData.type + 's']: data.progress, // quizzes, wordChallenges, or historicalAdventures
-            }
-          };
-        });
+        // Refetch the complete user profile to ensure accurate progress data
+        try {
+          const profileResponse = await authAPI.getProfile();
+          setUser(profileResponse.data.user);
+        } catch (error) {
+          console.error('Failed to refresh user profile:', error);
+          // Fallback: update locally if profile fetch fails
+          setUser(prev => {
+            if (!prev) return prev;
+            return {
+              ...prev,
+              progress: {
+                quizzes: prev.progress?.quizzes || [],
+                wordChallenges: prev.progress?.wordChallenges || [],
+                historicalAdventures: prev.progress?.historicalAdventures || [],
+                ...prev.progress,
+              }
+            };
+          });
+        }
         
         return true;
       }
@@ -202,8 +209,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
       
       return false;
-    } finally {
-      setIsLoading(false);
     }
   };
 

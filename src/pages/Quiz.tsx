@@ -78,9 +78,12 @@ const Quiz = () => {
   const handleAnswer = async (answer: string, isCorrect: boolean) => {
     setSelectedAnswer(answer);
     
+    // Calculate new score
+    let newScore = score;
     if (isCorrect) {
       const questionPoints = currentQuiz.questions[currentQuestionIndex].points || 1;
-      setScore(score + questionPoints);
+      newScore = score + questionPoints;
+      setScore(newScore);
     }
 
     setTimeout(() => {
@@ -90,14 +93,16 @@ const Quiz = () => {
       } else {
         setShowResult(true);
         
-        // Save user progress if logged in
-        if (user) {
+        // Save user progress if logged in - ONLY SAVE ONCE at the end with correct score
+        if (user && quizId) {
           updateProgress({
             type: 'quiz',
             itemId: quizId,
             data: {
-              score: score + (isCorrect ? (currentQuiz.questions[currentQuestionIndex].points || 1) : 0),
+              score: newScore, // Use the calculated score, not score state
             },
+          }).catch(error => {
+            console.error('Failed to save quiz progress:', error);
           });
         }
       }
