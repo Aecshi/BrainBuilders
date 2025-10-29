@@ -60,6 +60,63 @@ const historicalAdventures = [
     ],
     isActive: true
   },
+  {
+    title: 'The First Americans: Native American Life',
+    description: 'Learn how Native Americans lived long ago!',
+    era: 'Ancient',
+    gradeLevel: 'K',
+    difficulty: 'Easy',
+    estimatedTime: 10,
+    scenarios: [
+      {
+        title: 'Life in the Village',
+        description: 'You are visiting a Native American village. They show you how they live. What do you learn about?',
+        backgroundImage: 'native_village.jpg',
+        choices: [
+          {
+            text: 'Learn how they hunt and gather food',
+            nextScenarioId: 'hunting',
+            outcome: 'You learn how they respect nature and only take what they need!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'Native Americans lived in harmony with nature and used everything they hunted.'
+          },
+          {
+            text: 'Learn how they build homes',
+            nextScenarioId: 'building',
+            outcome: 'You see how they build different types of homes for different places!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'Different tribes built different homes: tepees, longhouses, and pueblos.'
+          }
+        ],
+        characters: [
+          {
+            name: 'Chief',
+            role: 'Village Leader',
+            imageUrl: 'chief.jpg',
+            dialogues: [
+              {
+                text: 'We respect the land and all living things!',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'Native Americans were the first people to live in North America, thousands of years before others arrived.',
+            source: 'Native American History'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Learn about Native American culture',
+      'Understand respect for nature',
+      'Discover early American history'
+    ],
+    isActive: true
+  },
 
   // ==================== GRADE 1 ====================
   {
@@ -116,6 +173,63 @@ const historicalAdventures = [
       'Learn about George Washington',
       'Understand what makes a good leader',
       'Discover the importance of fairness'
+    ],
+    isActive: true
+  },
+  {
+    title: 'The American Flag: Stars and Stripes',
+    description: 'Learn about the American flag!',
+    era: 'Industrial Revolution',
+    gradeLevel: '1',
+    difficulty: 'Easy',
+    estimatedTime: 10,
+    scenarios: [
+      {
+        title: 'Making the Flag',
+        description: 'You help make the first American flag! It has stars and stripes. What do they mean?',
+        backgroundImage: 'flag_making.jpg',
+        choices: [
+          {
+            text: 'The stars represent the states',
+            nextScenarioId: 'stars',
+            outcome: 'Yes! Each star is for one state in America!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'The 50 stars on the flag represent the 50 states in the United States.'
+          },
+          {
+            text: 'The stripes represent the original colonies',
+            nextScenarioId: 'stripes',
+            outcome: 'Correct! The 13 stripes are for the first 13 colonies!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'The 13 stripes represent the original 13 American colonies.'
+          }
+        ],
+        characters: [
+          {
+            name: 'Betsy Ross',
+            role: 'Flag Maker',
+            imageUrl: 'betsy_ross.jpg',
+            dialogues: [
+              {
+                text: 'This flag will represent our new country!',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'The American flag has changed 27 times as more states joined the country!',
+            source: 'American Flag History'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Learn about the American flag',
+      'Understand American symbols',
+      'Discover what the flag represents'
     ],
     isActive: true
   },
@@ -178,6 +292,63 @@ const historicalAdventures = [
     ],
     isActive: true
   },
+  {
+    title: 'Abraham Lincoln: Honest Abe',
+    description: 'Learn about President Abraham Lincoln!',
+    era: 'Industrial Revolution',
+    gradeLevel: '2',
+    difficulty: 'Easy',
+    estimatedTime: 12,
+    scenarios: [
+      {
+        title: 'Being Honest',
+        description: 'Young Abraham Lincoln works at a store. A customer leaves and Abraham realizes he gave them the wrong change. What should he do?',
+        backgroundImage: 'lincoln_store.jpg',
+        choices: [
+          {
+            text: 'Walk many miles to return the correct change',
+            nextScenarioId: 'honest',
+            outcome: 'Abraham walks miles to return the money. The customer is so happy about his honesty!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'Abraham Lincoln was known as "Honest Abe" because he always told the truth, even when it was hard.'
+          },
+          {
+            text: 'Keep the extra money',
+            nextScenarioId: 'dishonest',
+            outcome: 'Abraham feels bad and realizes honesty is always best!',
+            isHistoricallyAccurate: false,
+            learningPoint: 'Being honest builds trust and makes you a better person.'
+          }
+        ],
+        characters: [
+          {
+            name: 'Young Abraham Lincoln',
+            role: 'Store Worker',
+            imageUrl: 'young_lincoln.jpg',
+            dialogues: [
+              {
+                text: 'I must always be honest, no matter what!',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'Abraham Lincoln became the 16th President of the United States and helped end slavery.',
+            source: 'American Presidential History'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Learn about Abraham Lincoln',
+      'Understand the importance of honesty',
+      'Discover how honesty makes you a good leader'
+    ],
+    isActive: true
+  },
 
   // ==================== GRADE 3 ====================
   {
@@ -234,6 +405,63 @@ const historicalAdventures = [
       'Learn about westward expansion',
       'Understand pioneer challenges',
       'Discover life in the 1800s'
+    ],
+    isActive: true
+  },
+  {
+    title: 'The California Gold Rush',
+    description: 'Join the adventure to find gold in California!',
+    era: 'Industrial Revolution',
+    gradeLevel: '3',
+    difficulty: 'Easy',
+    estimatedTime: 15,
+    scenarios: [
+      {
+        title: 'Discovering Gold',
+        description: 'It\'s 1849! Gold has been discovered in California. Many people are rushing there to find gold. Will you join them?',
+        backgroundImage: 'gold_rush.jpg',
+        choices: [
+          {
+            text: 'Go to California to search for gold',
+            nextScenarioId: 'gold_search',
+            outcome: 'You travel to California and try your luck at finding gold!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'Many people called "forty-niners" traveled to California in 1849 hoping to find gold and get rich.'
+          },
+          {
+            text: 'Start a business selling supplies to miners',
+            nextScenarioId: 'business',
+            outcome: 'Smart choice! Many people made more money selling supplies than finding gold!',
+            isHistoricallyAccurate: true,
+            learningPoint: 'Some clever people made fortunes by selling tools, food, and supplies to gold miners instead of mining themselves.'
+          }
+        ],
+        characters: [
+          {
+            name: 'Prospector',
+            role: 'Gold Miner',
+            imageUrl: 'prospector.jpg',
+            dialogues: [
+              {
+                text: 'There\'s gold in them hills!',
+                order: 1
+              }
+            ]
+          }
+        ],
+        isEnding: false,
+        historicalFacts: [
+          {
+            fact: 'The California Gold Rush brought over 300,000 people to California between 1848 and 1855!',
+            source: 'American Western History'
+          }
+        ]
+      }
+    ],
+    learningObjectives: [
+      'Learn about the California Gold Rush',
+      'Understand westward expansion',
+      'Discover how the Gold Rush changed California'
     ],
     isActive: true
   },
