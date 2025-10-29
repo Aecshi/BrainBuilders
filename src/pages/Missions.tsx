@@ -31,18 +31,23 @@ const Missions = () => {
   });
 
   useEffect(() => {
-    if (historicalAdventures && historicalAdventures.length > 0 && !currentAdventure) {
-      setCurrentAdventure(historicalAdventures[0]);
+    if (historicalAdventures && historicalAdventures.length > 0) {
+      // Always set first adventure when data changes or era changes
+      if (!currentAdventure || currentAdventure.era !== era) {
+        setCurrentAdventure(historicalAdventures[0]);
+      }
     }
-  }, [historicalAdventures, currentAdventure]);
+  }, [historicalAdventures, era]);
 
-  if (error) {
-    toast({
-      title: 'Error loading historical adventures',
-      description: 'Failed to load adventure data. Please try again later.',
-      variant: 'destructive',
-    });
-  }
+  useEffect(() => {
+    if (error) {
+      toast({
+        title: 'Error loading historical adventures',
+        description: 'Failed to load adventure data. Please try again later.',
+        variant: 'destructive',
+      });
+    }
+  }, [error]);
 
   const handleChoice = (choice: any) => {
     setSelectedChoice(choice);
@@ -88,7 +93,25 @@ const Missions = () => {
     setCurrentAdventure(null);
   };
 
-  if (isLoading || !currentAdventure) {
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-sky-blue relative overflow-hidden flex items-center justify-center">
+        <div className="absolute top-10 left-10 w-32 h-20 bg-cloud-white rounded-full opacity-90" />
+        <div className="absolute top-20 right-20 w-40 h-24 bg-cloud-white rounded-full opacity-80" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-grass-green" />
+        
+        <Card className="relative z-10 p-8 bg-card border-4 border-border shadow-large rounded-2xl">
+          <div className="flex flex-col items-center">
+            <Target className="w-16 h-16 text-primary mb-4 animate-pulse" />
+            <h2 className="text-2xl font-bold text-center mb-4">Loading Historical Adventures...</h2>
+            <div className="animate-spin h-12 w-12 border-4 border-primary rounded-full border-t-transparent"></div>
+          </div>
+        </Card>
+      </div>
+    );
+  }
+
+  if (!currentAdventure && !isLoading) {
     return (
       <div className="min-h-screen bg-sky-blue relative overflow-hidden flex items-center justify-center">
         <div className="absolute top-10 left-10 w-32 h-20 bg-cloud-white rounded-full opacity-90" />
@@ -97,40 +120,16 @@ const Missions = () => {
         
         <Card className="relative z-10 w-full max-w-2xl mx-4 bg-card border-4 border-border shadow-large rounded-2xl p-8">
           <div className="flex flex-col items-center">
-            <Target className="w-16 h-16 text-primary mb-4" />
-            <h2 className="text-4xl font-bold text-center text-primary mb-2">Coming Soon!</h2>
-            <p className="text-xl text-center text-muted-foreground mb-8">
-              The Missions mode is currently under development. Prepare to embark on exciting historical adventures!
+            <AlertCircle className="w-16 h-16 text-amber-500 mb-4" />
+            <h2 className="text-2xl font-bold text-center mb-4">Loading Adventures...</h2>
+            <p className="text-center text-muted-foreground mb-6">
+              Please wait while we load your historical adventures...
             </p>
-            <div className="flex gap-4 justify-center">
-              <Button 
-                variant="default" 
-                size="lg" 
-                onClick={() => navigate('/')}
-              >
-                <Home className="mr-2" />
-                Back to Home
-              </Button>
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                onClick={() => navigate('/quiz')}
-              >
-                Try Quizzes Instead
-              </Button>
-            </div>
+            <Button variant="outline" onClick={() => navigate('/')}>
+              <Home className="mr-2" />
+              Back to Home
+            </Button>
           </div>
-        </Card>
-      </div>
-    );
-  }
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-sky-blue flex items-center justify-center">
-        <Card className="p-8 bg-card border-4 border-border shadow-large rounded-2xl">
-          <h2 className="text-2xl font-bold text-center mb-4">Loading Historical Adventures...</h2>
-          <div className="animate-spin h-8 w-8 border-4 border-primary rounded-full border-t-transparent mx-auto"></div>
         </Card>
       </div>
     );
