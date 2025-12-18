@@ -4,7 +4,7 @@
   "framework": "vite",
   "installCommand": "npm install",
   "env": {
-    "VITE_API_URL": "https://brainbuilders.onrender.com/api"
+    "VITE_API_URL": "https://brainbuilders-api.onrender.com/api"
   },
   "rewrites": [
     {

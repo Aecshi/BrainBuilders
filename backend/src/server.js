@@ -21,7 +21,8 @@ const app = express();
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production'
     ? [
-        'https://happy-hatchery-app.vercel.app', // Update with your actual Vercel URL once deployed
+        'https://brain-builders.vercel.app',
+        'https://brainbuilders.vercel.app',
         /\.vercel\.app$/ // Allow all vercel.app subdomains for dev deployments
       ]
     : 'http://localhost:8082', // Development frontend URL
