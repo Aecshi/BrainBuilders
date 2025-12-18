@@ -59,6 +59,42 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', environment: process.env.NODE_ENV });
 });
 
+// Seed endpoint to populate database
+app.get('/api/seed', async (req, res) => {
+  try {
+    const Quiz = require('./models/Quiz');
+    const WordChallenge = require('./models/WordChallenge');
+    const HistoricalAdventure = require('./models/HistoricalAdventure');
+    
+    const seedQuizzes = require('./seeds/quizSeed');
+    const seedWordChallenges = require('./seeds/wordChallengeSeed');
+    const seedHistoricalAdventures = require('./seeds/historicalAdventureSeed');
+    
+    // Clear existing data
+    await Quiz.deleteMany();
+    await WordChallenge.deleteMany();
+    await HistoricalAdventure.deleteMany();
+    
+    // Insert seed data
+    await Quiz.create(seedQuizzes);
+    await WordChallenge.create(seedWordChallenges);
+    await HistoricalAdventure.create(seedHistoricalAdventures);
+    
+    res.json({ 
+      success: true, 
+      message: 'Database seeded successfully!',
+      data: {
+        quizzes: seedQuizzes.length,
+        wordChallenges: seedWordChallenges.length,
+        historicalAdventures: seedHistoricalAdventures.length
+      }
+    });
+  } catch (error) {
+    console.error('Seed error:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 // Root route
 app.get('/', (req, res) => {
   res.json({
