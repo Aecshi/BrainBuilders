@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: happy-hatchery-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false # This will be manually set in Render dashboard
+    healthCheckPath: /health
+    plan: free
+    autoDeploy: true
+    headers:
+      - path: /*
+        name: Access-Control-Allow-Origin
+        value: https://happy-hatchery-app.vercel.app
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /
